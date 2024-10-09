@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice</title>
+    <link rel="stylesheet" href="/dice/style.css">
+    <link
+    href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+    rel="stylesheet"
+  />
+</head>
+<body>
+    <div class="container">
+        <h2>refresh me</h2>
+        <div class="dice">
+            <p>player1</p>
+            <img class="img1" src="/dice/images/dice6.png" alt="p1image">
+        </div>
+        <div class="dice">
+            <p>player2</p>
+            <img class="img2" src="/dice/images/dice6.png" alt="p2Image">
+        </div>
+    </div>
+    <footer>www App brewery com</footer>
+    <script>
+        var rnd1 = Math.floor(Math.random()*6)+1;
+        var rnd2 = Math.floor(Math.random()*6)+1;
+
+        document.querySelector(".img1").setAttribute("src","images/dice"+ rnd1+".png");
+        document.querySelector(".img2").setAttribute("src","images/dice"+rnd2+".png");
+
+        if(rnd1>rnd2)
+    {
+        document.querySelector("h2").innerHTML = "Player 1 wins";
+    }else if(rnd1<rnd2){
+        document.querySelector("h2").innerHTML = "Player 2 wins";
+    }else if(rnd1==rnd2)
+    {
+        document.querySelector("h2").innerHTML = "Its a tie";
+    }else
+    {
+        console.error("interrupt");
+    }
+    </script>
+</body>
+</html>
